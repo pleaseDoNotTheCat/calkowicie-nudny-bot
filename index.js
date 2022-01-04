@@ -31,6 +31,7 @@ client.on('messageCreate', (message, guild) => {
     if (!message.content.startsWith(prefix) || message.author.bot) 
     if (!message.content.startsWith(prefix2) || message.author.bot) return;
     db.add(`bot_${message.guild.id}_${message.author.id}`, 1);
+    // ^ liczy ile razy uzyto bota na serwerze
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();

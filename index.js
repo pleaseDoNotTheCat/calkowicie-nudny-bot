@@ -1,7 +1,7 @@
 const { MessageEmbed, message } = require("discord.js");
 const Discord = require('discord.js');
 const fs = require('fs')
-const db = require('quick.db')
+const db = require('nope.db')
 const client = new Discord.Client({
     intents: [32767, Discord.Intents.FLAGS.DIRECT_MESSAGES],
 });
@@ -30,8 +30,6 @@ client.on('messageCreate', (message, guild) => {
     const prefix2 = "S>"
     if (!message.content.startsWith(prefix) || message.author.bot) 
     if (!message.content.startsWith(prefix2) || message.author.bot) return;
-    db.add(`bot_${message.guild.id}_${message.author.id}`, 1);
-    // ^ liczy ile razy uzyto bota na serwerze
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
@@ -41,14 +39,8 @@ client.on('messageCreate', (message, guild) => {
     try {
         client.commands.get(command).execute(message, args);
     } catch (error) {
-        const eh = new MessageEmbed()
-        .setTitle('Wystąpił błąd')
-        .setDescription('Komenda nie jest odpowiedno zrobiona lub zostala zle uzyta')
-        .setFooter(`Blad: ${error}`)
-        .setColor('RED')
-        .setThumbnail(`${message.author.avatarURL()}`)
-        message.reply({ embeds: [eh] })
-        console.error(error);
+message.reply(`Wystąpił błąd, zgłoś go do <@831943801818841198>`)
+console.error(error)
     }
 });
 client.login('token')

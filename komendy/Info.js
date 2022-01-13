@@ -13,6 +13,7 @@ module.exports = {
         .setFooter('Informacje')
         if (!noping) return message.reply({ embeds: [e1], allowedMentions: { repliedUser: false } })
         const avatar = noping.avatarURL()
+	
         const e2 = new MessageEmbed()
         .setTitle('Informacje')
         .setDescription(`👦👧**Nazwa:** ${noping.username}\n\n👦👧**Tag**: ${noping.tag}\n\n**Dyskryminator**: #${noping.discriminator}\n\n👜**Id**: ${noping.id}\n\n🤖**Bot**: ${noping.bot ? 'Tak' : 'Nie'}\n\n:detective:**Utworzono konto**: <t:${Math.floor(noping.createdTimestamp/1000)}:d>\n\n:detective::new: **Dolączono na serwer:** <t:${Math.floor(message.mentions.members.first().joinedTimestamp/1000)}:d> `)

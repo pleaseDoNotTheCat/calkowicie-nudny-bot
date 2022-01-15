@@ -6,8 +6,8 @@ module.exports = {
    .setTitle('Pomoc bota')
 	.addFields(
 		{ name: 'Pomoc Developerska', value: 'eval - uruchamia ci kod\nexec - uzywa komend systemu' },
-		{ name: 'Pomoc Wstępna', value: 'tych komend nie ma w bocie ale sa w pomocy\n\n\nconsole-rainbow - loguje teńczowy tekst w konsoli (jestem leniwy i nie chce mi sie robic)' },
-        { name: 'Pomoc Uzytkownika', value: 'help - to gowno co widzisz\ninf = pisze kto jest gayem (najczesciej burrito)' },
+       { name: 'Pomoc Wspierajacego', value: 'say, powiedz - bot papuga' },
+        { name: 'Pomoc Uzytkownika', value: 'help - to gowno co widzisz\ninf = pisze kto jest gayem (najczesciej burrito)\nstatus - wysyla status bota\ninfo - wysyla info o uzytkowniku' },
 	) 
    .setFooter('xd')
    .setColor('GREEN')

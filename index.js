@@ -39,7 +39,7 @@ client.on('messageCreate', (message, guild) => {
     try {
         client.commands.get(command).execute(message, args);
     } catch (error) {
-message.reply(`Wystąpił błąd, zgłoś go do <@831943801818841198>`)
+message.reply(`Wystąpił błąd, zgłoś go do <@831943801818841198>\nbłąd: ${error}`)
 console.error(error)
     }
 });
